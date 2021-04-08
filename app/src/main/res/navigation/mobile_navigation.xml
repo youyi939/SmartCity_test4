@@ -22,4 +22,16 @@
         android:name="com.example.smartcity_test4.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_personal"
+        android:name="com.example.smartcity_test4.ui.personal.PersonalFragment"
+        android:label="个人中心"
+        tools:layout="@layout/personal_fragment" />
+
+    <fragment
+        android:id="@+id/navigation_xinwen"
+        android:name="com.example.smartcity_test4.ui.XinWen.XinWenFragment"
+        android:label="新闻模块"
+        tools:layout="@layout/xin_wen_fragment" />
 </navigation>
