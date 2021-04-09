@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         navView.setSelectedItemId(R.id.navigation_home);
         sharedPreferences = getSharedPreferences("data",0);
         editor = getSharedPreferences("data",0).edit();
-        editor.clear().commit();
 
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -66,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.navigation_notifications:
                         replace(notificationsFragment);
                         break;
-
                 }
                 return true;
             }

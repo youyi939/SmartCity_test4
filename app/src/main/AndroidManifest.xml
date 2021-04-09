@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartCity_test4"
         android:usesCleartextTraffic="true">
-        <activity android:name=".guide.GuideActivity" android:label="引导页"></activity>
+        <activity android:name=".ui.home.activity.AllServiceActivity" android:label="全部服务"></activity>
+        <activity
+            android:name=".guide.GuideActivity"
+            android:label="引导页" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
