@@ -1,8 +1,11 @@
 package com.example.smartcity_test4;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.smartcity_test4.guide.GuideActivity;
 import com.example.smartcity_test4.ui.XinWen.XinWenFragment;
 import com.example.smartcity_test4.ui.dashboard.DashboardFragment;
 import com.example.smartcity_test4.ui.home.HomeFragment;
@@ -20,6 +23,8 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import kotlin.jvm.internal.Intrinsics;
+
 public class MainActivity extends AppCompatActivity {
 
     private HomeFragment homeFragment = new HomeFragment();
@@ -28,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
     private NotificationsFragment notificationsFragment = new NotificationsFragment();
     private PersonalFragment personalFragment = new PersonalFragment();
 
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         replace(homeFragment);
         navView.setSelectedItemId(R.id.navigation_home);
+        sharedPreferences = getSharedPreferences("data",0);
+        editor = getSharedPreferences("data",0).edit();
+        editor.clear().commit();
 
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -60,6 +71,11 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        if (sharedPreferences.getBoolean("login?",true)){
+            Intent intent = new Intent(MainActivity.this, GuideActivity.class);
+            startActivity(intent);
+        }
 
     }
 
