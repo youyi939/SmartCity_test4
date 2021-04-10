@@ -12,7 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartCity_test4"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.home.activity.AllServiceActivity" android:label="全部服务"></activity>
+        <activity android:name=".ui.personal.acvitity.FeedbackActivity" android:label="意见反馈" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".ui.personal.acvitity.OrderActivity" android:label="订单列表" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".ui.personal.acvitity.ChangeActivity" android:parentActivityName=".MainActivity" android:label="修改密码"/>
+        <activity android:name=".ui.personal.acvitity.UserInfoActivity" android:label="个人详情" android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".ui.personal.acvitity.LoginActivity"
+            android:label="登陆页面"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ui.home.activity.AllServiceActivity"
+            android:label="全部服务"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".guide.GuideActivity"
             android:label="引导页" />

@@ -75,6 +75,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
+        Intent intent = getIntent();
+        if (intent.getBooleanExtra("login",false)){
+            replace(personalFragment);
+        }
+
     }
 
     public void replace(Fragment fragment){
